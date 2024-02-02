@@ -1,0 +1,36 @@
+{
+  "name": "wordlist_application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm-run-all clean build:* copy:*",
+    "build:public": "esbuild --bundle --outdir=dist/public --minify src/public/*.js",
+    "build:server": "esbuild --bundle --platform=node --target=node18 --outdir=dist --minify src/index.js",
+    "clean": "rimraf dist",
+    "copy": "npm-run-all copy:",
+    "copy:views": "cpr src/views dist/views",
+    "copy:public": "cpr --filter=.+\\.js$ src/public dist/public",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@markuplint/ejs-parser": "^3.12.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "markuplint": "^3.15.0",
+    "prettier": "^3.2.4",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-prettier": "^5.0.0"
+  },
+  "dependencies": {
+    "sequelize": "^6.35.2"
+  }
+}
