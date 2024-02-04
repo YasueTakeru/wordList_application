@@ -8,5 +8,9 @@ button{
   height: 100px;
   margin: 10px;
   font-size: 250%;
-  background-color: #66b6d5;
+  background-color: #7ad9ff;
+}
+
+button:hover{
+  background-color: #6dc4e7;
 }

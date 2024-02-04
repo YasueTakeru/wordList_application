@@ -47,6 +47,19 @@
             </select>
           </div>
         </div>
+        <div class="left">
+          <label for="explain" class="title">解説:</label>
+          <textarea name="choices3" rows="3" cols="50" class="choice"></textarea>
+        </div>
+        <div class="left">
+          <label for="answer" class="choice">問題範囲:</label>
+          <div class="choice">
+            <select name="answer">
+              <option value="edu">教職教養</option>
+              <option value="normal">一般教養</option>
+            </select>
+          </div>
+        </div>
         <center>
           <button type="submit">登録</button>
         </center>
@@ -54,6 +67,11 @@
       <form action="/register/editor" method="get">
         <center>
           <button type="submit">編集・削除</button>
+        </center>
+      </form>
+      <form action="/" method="get">
+        <center>
+          <button type="submit">タイトルに戻る</button>
         </center>
       </form>
     </div>
