@@ -8,32 +8,53 @@
   <body>
     <%- include("header",{ pageTitle: "登録画面"}) %>
     <div>
-      <form href="/solver" method="post">
-        <label for="question">問題:</label>
-        <textarea name="question" rows="5" cols="30"></textarea>
-        <label for="choices1">①:</label>
-        <textarea name="choices1" rows="5" cols="30"></textarea>
-        <label for="choices2">②:</label>
-        <textarea name="choices2" rows="5" cols="30"></textarea>
-        <label for="choices3">③:</label>
-        <textarea name="choices3" rows="5" cols="30"></textarea>
-        <label for="choices4">④:</label>
-        <textarea name="choices4" rows="5" cols="30"></textarea>
-        <label for="choices5">⑤:</label>
-        <textarea name="choices5" rows="5" cols="30"></textarea>
-        <label for="answer">答え:</label>
-        <textarea name="answer" rows="5" cols="30"></textarea>
-        <select name="answer">
-          <option value="①">①</option>
-          <option value="②">②</option>
-          <option value="③">③</option>
-          <option value="④">④</option>
-          <option value="⑤">⑤</option>
-        </select>
-        <button type="submit">登録</button>
+      <form action="/register" method="post">
+        <div class="left">
+          <label for="question" class="title">問題:</label><br />
+          <textarea name="question" rows="4" cols="50" class="title"></textarea>
+        </div>
+        <br />
+        <div class="left">
+          <label for="choices1" class="choice">①:</label>
+          <textarea name="choices1" rows="3" cols="50" class="choice"></textarea>
+        </div>
+        <div class="left">
+          <label for="choices2" class="choice">②:</label>
+          <textarea name="choices2" rows="3" cols="50" class="choice"></textarea>
+        </div>
+        <div class="left">
+          <label for="choices3" class="choice">③:</label>
+          <textarea name="choices3" rows="3" cols="50" class="choice"></textarea>
+        </div>
+        <div class="left">
+          <label for="choices4" class="choice">④:</label>
+          <textarea name="choices4" rows="3" cols="50" class="choice"></textarea>
+        </div>
+        <div class="left">
+          <label for="choices5" class="choice">⑤:</label>
+          <textarea name="choices5" rows="3" cols="50" class="choice"></textarea>
+        </div>
+        <br />
+        <div class="left">
+          <label for="answer" class="choice">答え:</label>
+          <div class="choice">
+            <select name="answer">
+              <option value="①">①</option>
+              <option value="②">②</option>
+              <option value="③">③</option>
+              <option value="④">④</option>
+              <option value="⑤">⑤</option>
+            </select>
+          </div>
+        </div>
+        <center>
+          <button type="submit">登録</button>
+        </center>
       </form>
-      <form href="/registers" method="get">
-        <button type="submit">編集・削除</button>
+      <form action="/register/editor" method="get">
+        <center>
+          <button type="submit">編集・削除</button>
+        </center>
       </form>
     </div>
   </body>

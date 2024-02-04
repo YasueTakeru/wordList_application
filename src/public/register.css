@@ -1,0 +1,41 @@
+.left{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button{
+  width: 300px;
+  height: 100px;
+  margin: 10px;
+  font-size: 250%;
+  background-color: #83ff6e;
+}
+button:hover{
+  background-color: rgb(106, 189, 78);
+}
+  
+.title{
+  font-size: 150%;
+}
+
+.choice{
+  font-size: 150%;
+}
+
+select{
+  width: 300px;
+  height: 80px;
+  margin: 10px 0;
+  padding: 8px;
+  display: block;
+  appearance: none;
+  font-size: 40px;
+}
+
+textarea{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
