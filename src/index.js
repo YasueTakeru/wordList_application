@@ -1,12 +1,12 @@
 // src/index.js
-"use strict";
+'use strict'
 
 // appを取得する。
-const app = require("./app");
+const app = require('./app')
 
 const main = async () => {
   // ポート解放
-  app.run();
-};
+  app.run()
+}
 
-main();
+main()
