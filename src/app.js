@@ -6,6 +6,8 @@ const express = require("express");
 
 const methodOverride = require("method-override");
 
+const { registerRouter } = require("./register/register.controller");
+
 const PORT = 3000;
 
 const run = () => {
@@ -26,7 +28,8 @@ const run = () => {
   // ルーティング
   const router = PromiseRouter();
   app.use(router);
-  
+  app.use("/register", registerRouter);
+
   router.get("/", (req, res) => {
     res.render("main");
   });
