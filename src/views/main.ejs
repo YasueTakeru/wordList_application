@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link href="/main.css" rel="stylesheet" />
+    <%- include("head") %>
+  </head>
+  <body>
+    <%- include("header",{ pageTitle: "Top page"}) %>
+    <div class="left">
+      <form href="/register" method="get">
+        <button type="submit">登録画面へ</button>
+      </form>
+      <form href="/solver" method="get">
+        <button type="submit">答える画面へ</button>
+      </form>
+    </div>
+  </body>
+</html>

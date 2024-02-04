@@ -1,0 +1,11 @@
+.left{
+  display:flex;
+  justify-content: center;
+}
+button{
+  width: 300px;
+  height: 100px;
+  margin: 10px;
+  font-size: 250%;
+  background-color: #66b6d5;
+}
