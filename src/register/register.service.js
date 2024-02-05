@@ -7,6 +7,17 @@ const createQuestion = async (question, choice1, choice2, choice3, choice4, choi
   await models.question.create({ question, choice1, choice2, choice3, choice4, choice5, answer, explain, questionType });
 };
 
+const deleteQuestion = async (id) => {
+  await models.question.destroy({ where: { id: id }});
+}
+
+const editQuestion = async (id, question, choice1, choice2, choice3, choice4, choice5, answer, explain, questionType) => {
+  const aquestion = await models.question.findOne({ where: { id: id }});
+  await aquestion.update({ question, choice1, choice2, choice3, choice4, choice5, answer, explain, questionType });
+};
+
 module.exports = {
-  createQuestion
+  createQuestion,
+  deleteQuestion,
+  editQuestion,
 };
