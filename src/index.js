@@ -1,10 +1,10 @@
 // src/index.js
-"use strict";
+'use strict';
 
 // appを取得する。
-const app = require("./app");
+const app = require('./app');
 
-const sequelize = require("./sequelize");
+const sequelize = require('./sequelize');
 
 const main = async () => {
   sequelize.sync();

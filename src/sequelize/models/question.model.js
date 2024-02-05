@@ -1,44 +1,44 @@
 // src/sequelize/models/question.models.js
-const { DataTypes } = require("sequelize");
+const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  const Question = sequelize.define("question", {
+  const Question = sequelize.define('question', {
     id: {
       allowNull: false,
       autoIncrement: true, // カウントアップしていく
       primaryKey: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     question: {
       allowNull: false,
-      type: DataTypes.TEXT,
-    },    
+      type: DataTypes.TEXT
+    },
     choice1: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
     choice2: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
     choice3: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
     choice4: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
     choice5: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
-    answer:{
+    answer: {
       allowNull: false,
-      type: DataTypes.NUMBER,
+      type: DataTypes.NUMBER
     },
-    explain:{
+    explain: {
       allowNull: false,
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
-    questionType:{
+    questionType: {
       allowNull: false,
-      type: DataTypes.ENUM("edu","normal"),
+      type: DataTypes.ENUM('edu', 'normal')
     }
   });
   return Question;

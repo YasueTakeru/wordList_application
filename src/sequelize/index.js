@@ -1,14 +1,14 @@
 // src/sequelize/index.js
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require('sequelize');
 
 // sequelize接続のインスタンス
 const sequelize = new Sequelize({
-  dialect: "sqlite",
-  storage: "db/questions.sqlite3",
-  logging: false,
+  dialect: 'sqlite',
+  storage: 'db/questions.sqlite3',
+  logging: true
 });
 
-const questionDefiner = require("./models/question.model");
+const questionDefiner = require('./models/question.model');
 
 // tableを定義
 questionDefiner(sequelize);
