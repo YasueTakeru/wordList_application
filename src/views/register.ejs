@@ -11,39 +11,98 @@
       <form action="/register" method="post">
         <div class="left">
           <label for="question" class="title">問題:</label><br />
-          <textarea name="question" rows="4" cols="50" class="title"></textarea>
+          <textarea
+            id="question"
+            name="question"
+            rows="4"
+            cols="50"
+            class="title"
+            required
+          ></textarea>
         </div>
         <br />
         <div class="left">
-          <label for="choices1" class="choice">①:</label>
-          <textarea name="choices1" rows="3" cols="50" class="choice"></textarea>
+          <label for="choice1" class="choice">①:</label>
+          <textarea
+            id="choice1"
+            name="choice1"
+            rows="3"
+            cols="50"
+            class="choice"
+          ></textarea>
         </div>
         <div class="left">
-          <label for="choices2" class="choice">②:</label>
-          <textarea name="choices2" rows="3" cols="50" class="choice"></textarea>
+          <label for="choice2" class="choice">②:</label>
+          <textarea
+            id="choice2"
+            name="choice2"
+            rows="3"
+            cols="50"
+            class="choice"
+          ></textarea>
         </div>
         <div class="left">
-          <label for="choices3" class="choice">③:</label>
-          <textarea name="choices3" rows="3" cols="50" class="choice"></textarea>
+          <label for="choice3" class="choice">③:</label>
+          <textarea
+            id="choice3"
+            name="choice3"
+            rows="3"
+            cols="50"
+            class="choice"
+          ></textarea>
         </div>
         <div class="left">
-          <label for="choices4" class="choice">④:</label>
-          <textarea name="choices4" rows="3" cols="50" class="choice"></textarea>
+          <label for="choice4" class="choice">④:</label>
+          <textarea
+            id="choice4"
+            name="choice4"
+            rows="3"
+            cols="50"
+            class="choice"
+          ></textarea>
         </div>
         <div class="left">
-          <label for="choices5" class="choice">⑤:</label>
-          <textarea name="choices5" rows="3" cols="50" class="choice"></textarea>
+          <label for="choice5" class="choice">⑤:</label>
+          <textarea
+            id="choice5"
+            name="choice5"
+            rows="3"
+            cols="50"
+            class="choice"
+          ></textarea>
         </div>
         <br />
         <div class="left">
           <label for="answer" class="choice">答え:</label>
+          <div id="answer" class="choice">
+            <select name="answer" required>
+              <option value="" hidden>選択してください</option>
+              <option value="1">①</option>
+              <option value="2">②</option>
+              <option value="3">③</option>
+              <option value="4">④</option>
+              <option value="5">⑤</option>
+            </select>
+          </div>
+        </div>
+        <div class="left">
+          <label for="explain" class="title">解説:</label>
+          <textarea
+            id="explain"
+            name="explain"
+            rows="3"
+            cols="50"
+            class="choice"
+            required
+          ></textarea>
+        </div>
+        <div class="left">
+          <label for="questionType" class="choice">問題範囲:</label>
           <div class="choice">
-            <select name="answer">
-              <option value="①">①</option>
-              <option value="②">②</option>
-              <option value="③">③</option>
-              <option value="④">④</option>
-              <option value="⑤">⑤</option>
+            <select id="questionType" name="questionType" required>
+              <option value="" hidden>選択してください</option>
+              <option value="edu">教職教養</option>
+              <option value="normal">一般教養</option>
             </select>
           </div>
         </div>

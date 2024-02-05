@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link href="/editor.css" rel="stylesheet" />
+    <%- include("head") %>
+  </head>
+  <body>
+    <%- include("header",{ pageTitle: "編集画面"}) %>
+    <div>
+      <% for (const question of questions) { %>
+        <form action="/register/<%= question.id %>?_method=put" method="post">
+          <center>
+            <label for="question" class="title">問題:</label><br />
+            <textarea
+              id="question"
+              name="question"
+              rows="4"
+              cols="50"
+              class="title"
+              required
+            ><%= question.question %></textarea>
+          </center>  
+          </div>
+          <br />
+          <div class="left">
+            <label for="choice1" class="choice">①:</label>
+            <textarea
+              id="choice1"
+              name="choice1"
+              rows="4"
+              cols="40"
+              class="choice"
+            ><%= question.choice1 %></textarea>
+            <label for="choice2" class="choice">②:</label>
+            <textarea
+              id="choice2"
+              name="choice2"
+              rows="4"
+              cols="40"
+              class="choice"
+            ><%= question.choice2 %></textarea>
+            <label for="choice3" class="choice">③:</label>
+            <textarea
+              id="choice3"
+              name="choice3"
+              rows="4"
+              cols="40"
+              class="choice"
+            ><%= question.choice3 %></textarea>
+            <label for="choice4" class="choice">④:</label>
+            <textarea
+              id="choice4"
+              name="choice4"
+              rows="4"
+              cols="40"
+              class="choice"
+            ><%= question.choice4 %></textarea>
+            <label for="choice5" class="choice">⑤:</label>
+            <textarea
+              id="choice5"
+              name="choice5"
+              rows="4"
+              cols="40"
+              class="choice"
+            ><%= question.choice5 %></textarea>
+          </div>
+          <br />
+          <div class="left">
+            <label for="answer" class="choice">答え:</label>
+            <div id="answer" class="choice">
+              <select name="answer">
+                <option value="1" <% if(question.answer === 1) { %>
+                    selected
+                <% } %>>①</option>
+                <option value="2" <% if(question.answer === 2) { %>
+                    selected
+                <% } %>>②</option>
+                <option value="3" <% if(question.answer === 3) { %>
+                    selected
+                <% } %>>③</option>
+                <option value="4" <% if(question.answer === 4) { %>
+                    selected
+                <% } %>>④</option>
+                <option value="5" <% if(question.answer === 5) { %>
+                    selected
+                <% } %>>⑤</option>
+              </select>
+            </div>
+          </div>
+          <div class="left">
+            <label for="explain" class="title">解説:</label>
+            <textarea
+              id="explain"
+              name="explain"
+              rows="3"
+              cols="50"
+              class="choice"
+              required
+            ><%= question.explain %></textarea>
+          </div>
+          <div class="left">
+            <label for="questionType" class="choice">問題範囲:</label>
+            <div class="choice">
+              <select id="questionType" name="questionType" value="<%= question.questionType %>">
+                <option value="edu" <% if(question.questionType === "edu") { %>
+                    selected
+                <% } %>>教職教養</option>
+                <option value="normal" <% if(question.questionType === "normal") { %>
+                    selected
+                <% } %>>一般教養</option>
+              </select>
+            </div>
+          </div>
+          <div class="left">
+            <button>編集</button>
+          </form>
+          <form action="/register/<%= question.id %>?_method=delete" method="post">
+            <button>削除</button>
+          </form>
+        </div>
+      <% } %>
+      <form action="/register" method="get">
+        <center>
+          <button type="submit" class="toback">登録画面に戻る</button>
+        </center>
+      </form>
+    </div>
+  </body>
+</html>
